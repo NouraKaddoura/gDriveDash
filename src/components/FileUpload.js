@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import readXlsxFile from 'read-excel-file'
+import ReactDom from 'react-dom';
+import Button from '@material-ui/core/Button';
 
 class FileUpload extends Component {
   constructor () {
@@ -42,6 +44,8 @@ class FileUpload extends Component {
       }
     })
 
+    answers.splice(0, 1)
+
     this.props.onFileUpload(answers)
 
 
@@ -64,11 +68,19 @@ class FileUpload extends Component {
   render () {
     return (
       <div>
-        <input
-          type='file'
-          onChange={this.handleFileChange}
-          ref={this.fileInput}
-        />
+        <Button id="uploadbtn" variant="contained"
+          component="label"
+          color="primary"
+          >
+          Upload File
+          <input
+            type='file'
+            onChange={this.handleFileChange}
+            ref={this.fileInput}
+            style={{ display: "none" }}
+          />
+        </Button>
+
       </div>
     )
   }

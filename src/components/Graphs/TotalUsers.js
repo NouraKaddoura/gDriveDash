@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import ReactDom from 'react-dom';
+import Button from '@material-ui/core/Button';
 
 class TotalUsers extends Component {
 
@@ -11,7 +12,9 @@ class TotalUsers extends Component {
   render() {
     return (
       <div>
-        {this.getUsers()}
+     
+        <h1>Total Surveyed:</h1>
+        <h1>{this.getUsers()}</h1>
       </div>
     )
   }

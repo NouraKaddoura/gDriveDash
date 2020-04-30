@@ -1,32 +1,43 @@
 import React, { Component } from 'react';
 
+class TopDevice extends Component {
 
-//class TopDevice extends Component {
+  getTopDevice = () => {
+   const tableData = this.props.tableData
+   const devicesNames = tableData.map(t => {
+     return t.primaryDevice
+   })
 
-  //getTopDevice = () => {
-  //  const tableData = this.props.tableData
-  //  const devices = tableData.map(t => {
-  //    return t.primaryDevice
-  //  })
-    // get a unique set of device name
-    // filter our by each name to get an array ofjust those devices
-    // with that array we will get the length
-    // store the legnth
-    // find a count for each device
-    //setobjectfor array types
-    //unique set of the array - new array
-    //first devicesarray that exists for each of your unqiqye set filter out to get a new array the list of the txt with .lenght and get a value.
-    //store object key is name of device value is the link
+   const deviceCollections = {
+    'Laptop (PC)': devicesNames.filter(d => d === 'Laptop (PC)'),
+    'Laptop (Mac)': devicesNames.filter(d => d === 'Laptop (Mac)'),
+    'Mobile Device (Android)': devicesNames.filter(d => d === 'Mobile Device (Android)'),
+    'Mobile Device (iPhone)': devicesNames.filter(d => d === 'Mobile Device (iPhone)') ,
+    'Tablet': devicesNames.filter(d => d === 'Tablet')
+   }
 
-   // return devices
-  //}
-  //render() {
-  //  return (
-  //    <div>
-  //      {this.getTopDevice()}
-   //   </div>
-  //  )
- // }
-//}
+   let topDeviceName = null
+   let topDeviceCount = 0
+   for (const device in deviceCollections) {
+     if (topDeviceName === null){
+      topDeviceCount = deviceCollections[device].length
+      topDeviceName = device
+     }
+     else if(deviceCollections[device].length > topDeviceCount) {
+      topDeviceName = device
+      topDeviceCount = deviceCollections[device].length
+     }
+   }
 
-//export default TopDevice;
+   return topDeviceName
+  }
+  render() {
+   return (
+     <div>
+       {this.getTopDevice()}
+     </div>
+   )
+ }
+}
+
+export default TopDevice;
