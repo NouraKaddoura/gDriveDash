@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import * as d3 from "d3";
+import Chart from 'react-chartjs'
 
 class WeeklyUse extends Component {
 
@@ -8,57 +8,48 @@ class WeeklyUse extends Component {
     const use = tableData.map(t => {
       return t.weeklyUse
     })
+    console.log(use)
     return use
   }
 
-  renderChart = () => {
-    const data = this.getUse()
-    const height = 30
-    const width = 30
-    const color ='#AAA'
-    const arc = d3.arc()
-      const arcs = d3.pie(data);
+  renderChart = () =>{
+    const weeklyUseOptions = this.getUse()
 
-      const svg = d3.create("svg")
-          .attr("viewBox", [-width / 2, -height / 2, width, height]);
+    if (weeklyUseOptions.length < 1) return ''
 
-      svg.selectAll("path")
-        .data(arcs)
-        .join("path")
-          .attr("fill", d => color(d.data.name))
-          .attr("d", arc)
-        .append("title")
-          .text(d => `${d.data.name}: ${d.data.value.toLocaleString()}`);
+    const data = [
+      {
+        label: '1-2',
+        value: weeklyUseOptions.filter(o => o === '1-2').length,
+        color: '#0000ff'
+      },
+      {
+        label: '3-5',
+        value: weeklyUseOptions.filter(o => o === '3-5').length,
+        color: '#00008b'
+      },
+      {
+        label: '6+',
+        value: weeklyUseOptions.filter(o => o === '6+').length,
+        color: '#add8e6'
+      },
+    ]
 
-      svg.append("g")
-          .attr("font-family", "sans-serif")
-          .attr("font-size", 12)
-          .attr("text-anchor", "middle")
-        .selectAll("text")
-        .data(arcs)
-        .join("text")
-          .attr("transform", d => `translate(${arc.centroid(d)})`)
-          .call(text => text.append("tspan")
-              .attr("y", "-0.4em")
-              .attr("font-weight", "bold")
-              .text(d => d.data.name))
-          .call(text => text.filter(d => (d.endAngle - d.startAngle) > 0.25).append("tspan")
-              .attr("x", 0)
-              .attr("y", "0.7em")
-              .attr("fill-opacity", 0.7)
-              .text(d => d.data.value.toLocaleString()));
+    const chart = <Chart.Doughnut data={data} />
 
-      return svg.node();
+    return chart
  }
 
   render() {
     return (
       <div>
-        {this.getUse()}
+        <h1>How Often Per Week?</h1>
         {this.renderChart()}
+
       </div>
     )
   }
 }
 
 export default WeeklyUse
+  // { this.renderChart() }

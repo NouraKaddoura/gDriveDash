@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import Chart from 'react-chartjs'
 
 // what are you using to share files: largeFileSharingM
 class LargeFileSharing extends Component {
 
-  getFiles = () => {
+  getTopFileType = () => {
     const tableData = this.props.tableData
     const files = tableData.map(t => {
       return t.largeFileSharing
@@ -41,11 +42,49 @@ class LargeFileSharing extends Component {
     return topFileType
   }
 
+  renderChart = () => {
+    const tableData = this.props.tableData
+
+    if (tableData < 1) return ''
+
+    const files = tableData.map(t => {
+      return t.largeFileSharing
+    })
+
+    const parsedFiles = files.map(f => {
+      return f.split(', ')
+    })
+    const fileNames = parsedFiles.flat()
+
+    const data = {
+      labels: ['Message Courier', 'USB', 'FTP', 'MyBriefcase', 'Comply365', 'Navigon', 'Other'],
+      datasets: [
+        {
+          label: 'File Sharing',
+          fillColor: '#00008b',
+          data: [
+            fileNames.filter(o => o === 'Message Courier').length,
+            fileNames.filter(o => o === 'USB').length,
+            fileNames.filter(o => o === 'FTP').length,
+            fileNames.filter(o => o === 'MyBriefcase').length,
+            fileNames.filter(o => o === 'Comply365').length,
+            fileNames.filter(o => o === 'Navigon').length,
+            fileNames.filter(o => o === 'Other (Please provide detail at the end of the survey)').length,
+          ]
+        }
+      ]
+    }
+
+    const chart = <Chart.Bar data={data} />
+    return chart
+  }
+
 
   render() {
     return (
       <div>
-        {this.getFiles()}
+        <div>Top Service: {this.getTopFileType()}</div>
+        {this.renderChart()}
       </div>
     )
   }

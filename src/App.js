@@ -14,6 +14,7 @@ import Sidebar from './components/Sidebar'
 import Content from './components/Content'
 import ProductivityAverage from './components/Graphs/ProductivityAverage'
 import TopDevice from './components/Graphs/TopDevice'
+import { positions } from '@material-ui/system';
 
 
 class App extends Component {
@@ -34,19 +35,19 @@ class App extends Component {
     return (
       <div className="app">
         <Sidebar />
-        <TotalUsers tableData={this.state.tableData} />
-        <TopDevice tableData={this.state.tableData} />
-        <Content />
         <FileUpload onFileUpload={this.onFileUpload} />
+
+        <Content tableData={this.state.tableData} />
+
+        {/* <WeeklyUse tableData={this.state.tableData} />
+        <TotalUsers tableData={this.state.tableData} />
+        <ProductivityAverage tableData={this.state.tableData} />
+        <TopDevice tableData={this.state.tableData} />
         <JobRoleBreakdown tableData={this.state.tableData} />
-        <WeeklyUse tableData={this.state.tableData} />
         <LargeFileSharing tableData={this.state.tableData} />
         <Productivity tableData={this.state.tableData} />
         <PrimaryCapability tableData={this.state.tableData} />
-        <Devices tableData={this.state.tableData} />
-        <ProductivityAverage tableData={this.state.tableData} />
-
-
+        <Devices tableData={this.state.tableData} /> */}
 
       </div>
     )
