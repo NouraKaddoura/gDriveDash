@@ -1,0 +1,68 @@
+.content{
+  /* padding-top:10px;
+  padding-left:20px; */
+  display: inline-block;
+  width: calc(100vw - 180px);
+  margin-left: 160px;
+}
+
+.chart {
+
+}
+
+.chartTitle {
+  font-size: 16px;
+}
+
+.legend {
+list-style: none;
+display: flex;
+justify-content: space-evenly;
+}
+
+.legendColor {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+}
+
+.legendOne {
+  background-color: #6290C8;
+}
+
+.legendTwo {
+  background-color: #1768AC;
+
+}
+
+.legendThree {
+  background-color: #06BEE1;
+}
+
+.firstrow{
+  display: flex;
+  justify-content: space-evenly;
+  text-align:center;
+}
+
+.secondrow{
+  display: flex;
+  justify-content: space-evenly;
+  text-align:center;
+}
+
+.WeeklyUse {
+  display: inline-block;
+}
+
+.TotalUsers {
+  display: inline-block;
+}
+
+.Devices {
+  display: inline-block;
+}
+
+.LargeFileSharing {
+  display: inline-block;
+}

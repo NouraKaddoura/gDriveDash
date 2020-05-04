@@ -15,42 +15,42 @@ renderChart = () => {
     {
       label: 'Executive',
       value: roles.filter(o => o === 'Executive').length,
-      color: '#0000ff'
+      color: '#6290C8'
     },
     {
       label: 'Manager',
       value: roles.filter(o => o === 'Manager').length,
-      color: '#0000ff'
+      color: '#1768AC'
     },
     {
       label: 'Project/Program Manager',
       value: roles.filter(o => o === 'Project/Program Manager').length,
-      color: '#0000ff'
+      color: '#06BEE1'
     },
     {
       label: 'Technologist(IT, Developer, etc)',
       value: roles.filter(o => o === 'Technologist(IT, Developer, etc)').length,
-      color: '#0000ff'
+      color: '#1768AC'
     },
     {
       label: 'Communications',
       value: roles.filter(o => o === 'Communications').length,
-      color: '#0000ff'
+      color: '#06BEE1'
     },
     {
       label: 'Supplier Management',
       value: roles.filter(o => o === 'Supplier Management').length,
-      color: '#0000ff'
+      color: '#06BEE1'
     },
     {
       label: 'Manufacturing',
       value: roles.filter(o => o === 'Manufacturing').length,
-      color: '#0000ff'
+      color: '#1768AC'
     },
     {
       label: 'Engineering',
       value: roles.filter(o => o === 'Engineering').length,
-      color: '#0000ff'
+      color: '#6290C8'
     }
   ]
   const chart = <Chart.Pie data={data} />

@@ -4,6 +4,8 @@ import ReactDom from 'react-dom';
 import Button from '@material-ui/core/Button';
 import { positions } from '@material-ui/system';
 
+import './FileUpload.css'
+
 
 class FileUpload extends Component {
   constructor () {

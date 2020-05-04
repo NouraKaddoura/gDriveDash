@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 
 //Make a weighted average in stars
 import Rating from 'react-rating'
+import { blue } from '@material-ui/core/colors'
 class ProductivityAverage extends Component {
 
   getProductivity = () => {
@@ -36,8 +37,7 @@ class ProductivityAverage extends Component {
 
   render() {
     return (
-      <div>
-        Productivity and Collobartion Average Rating:
+      <div class="rating">
         <Rating initialRating={this.getProductivity()} readonly
 
         />

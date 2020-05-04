@@ -8,7 +8,6 @@ class WeeklyUse extends Component {
     const use = tableData.map(t => {
       return t.weeklyUse
     })
-    console.log(use)
     return use
   }
 
@@ -21,31 +20,55 @@ class WeeklyUse extends Component {
       {
         label: '1-2',
         value: weeklyUseOptions.filter(o => o === '1-2').length,
-        color: '#0000ff'
+        color: '#6290C8'
       },
       {
         label: '3-5',
         value: weeklyUseOptions.filter(o => o === '3-5').length,
-        color: '#00008b'
+        color: '#1768AC'
       },
       {
         label: '6+',
         value: weeklyUseOptions.filter(o => o === '6+').length,
-        color: '#add8e6'
+        color: '#06BEE1'
       },
     ]
 
-    const chart = <Chart.Doughnut data={data} />
+    const chart = (
+      <div className='chart'>
+        <h3 className='chartTitle'>How often per week?</h3>
+        {this.renderLegend()}
+        <Chart.Doughnut data={data} height={200}/>
+      </div>
+    )
 
     return chart
  }
 
+ renderLegend = () => {
+  const legendElement = (
+  <ul className='legend'>
+    <li>
+      <span className='legendColor legendOne'></span>
+      <span className='legendLabel'>1-2</span>
+    </li>
+    <li>
+      <span className='legendColor legendTwo'></span>
+      <span className='legendLabel'>3-5</span>
+    </li>
+    <li>
+      <span className='legendColor legendThree'></span>
+      <span className='legendLabel'>6+</span>
+    </li>
+  </ul>
+  )
+  return legendElement
+ }
+
   render() {
     return (
-      <div>
-        <h1>How Often Per Week?</h1>
+      <div className='WeeklyUse'>
         {this.renderChart()}
-
       </div>
     )
   }

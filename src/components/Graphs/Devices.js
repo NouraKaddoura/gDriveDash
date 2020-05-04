@@ -21,7 +21,7 @@ class Devices extends Component {
       datasets: [
         {
           label: 'Devices Used',
-          fillColor: '#00008b',
+          fillColor: '#06BEE1',
           data: [
             devices.filter(o => o === 'Laptop (PC)').length,
             devices.filter(o => o === 'Laptop (Mac)').length,
@@ -40,7 +40,7 @@ class Devices extends Component {
 
   render() {
     return (
-      <div>
+      <div className='Devices'>
         {this.renderChart()}
       </div>
     )

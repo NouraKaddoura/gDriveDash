@@ -32,7 +32,7 @@ class PrimaryCapability extends Component {
       datasets: [
         {
           label: 'Capabilities',
-          fillColor: '#00008b',
+          fillColor: '#6290C8',
           data: [
             capabilityNames.filter(c => c === 'Docs').length,
             capabilityNames.filter(c => c === 'Sheets').length,

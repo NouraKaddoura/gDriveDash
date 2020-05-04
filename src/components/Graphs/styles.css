@@ -1,8 +1,46 @@
-.content {
+
+
+
+/*.content {
   display: flex;
   justify-content: space-evenly;
+  text-align:center;
+
+
+}*/
+/*
+.centerbtn{
+  text-align:center;
+  margin:0 auto;
+  align-items:center;
+}
+.fileupload {
+  display:flex;
+  flex-direction:row;
+  justify-content:space-between;
+
+
 }
 
+#uploadbtn{
+display:flex;
+align-items:center;
+
+}
+*/
+
+/*
 .graph{
   display: inline-block;
+}*/
+
+/*
+.content{
+  text-align:center;
+  margin:0 auto;
 }
+*/
+/*.container{
+  display:flex;
+
+}*/

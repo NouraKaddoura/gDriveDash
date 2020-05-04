@@ -10,6 +10,13 @@ import Devices from './Graphs/Devices'
 import JobRoleBreakdown from './Graphs/JobRoleBreakdown'
 import PrimaryCapability from './Graphs/PrimaryCapability.js'
 import './Graphs/styles.css'
+import FileUpload from '../components/FileUpload';
+import ProductivityAverage from './Graphs/ProductivityAverage'
+import TotalUsers from './Graphs/TotalUsers';
+
+import './Content.css'
+//import { Grid, Row, Col } from 'react-flexbox-grid';
+
 // src/components/Content.js
 
 
@@ -25,42 +32,57 @@ import './Graphs/styles.css'
 // }));
 
 class Content extends Component {
+  constructor() {
+    super()
+    this.state = {
+      tableData: []
+    }
+  }
+
+
+  onFileUpload = (tableData) => {
+    this.setState({
+      tableData: tableData
+    })
+  }
 
   render () {
     // const classes = useStyles();
     //make content a flexbox
     return (
-      <div className='content'>
-        <div className='weeklyUse' item xs={5}>
-          <Paper>Use Per Week <WeeklyUse tableData={this.props.tableData} /></Paper>
+      <div className="content">
+
+          <div className='fileupload'>
+              <FileUpload onFileUpload={this.onFileUpload} tableData={this.state.tableData} />
+          </div>
+
+
+        <div className="firstrow graphRow">
+          <WeeklyUse tableData={this.state.tableData} />
+          <div className="usabilityCollab">
+           <TotalUsers tableData={this.state.tableData}/>
+            <h3 style={{paddingLeft:10}}>Productivity & Collaboration Rating Average</h3><ProductivityAverage tableData={this.state.tableData} />
+          </div>
         </div>
-        <div container spacing={3}>
-          <Grid item xs={12}>
-            <Paper>Upload Button + Title</Paper>
-          </Grid>
-          <Grid item xs={7}>
-            <Paper>Total Users Total Surveyed</Paper>
-          </Grid>
-          <Grid item xs={7}>
-            <Paper>Collab Rating <br/><br/> Usability Rating </Paper>
-          </Grid>
-          <Grid item xs={5}>
-            <Paper><Devices tableData={this.props.tableData}/></Paper>
-          </Grid>
-          <Grid item xs={6}>
-            <Paper><LargeFileSharing tableData={this.props.tableData} /></Paper>
-          </Grid>
-          <Grid item xs={6}>
-            <Paper><PrimaryCapability tableData={this.props.tableData}/></Paper>
-          </Grid>
-          <Grid item xs={12}>
-            <Paper><JobRoleBreakdown tableData={this.props.tableData}/></Paper>
-          </Grid>
-          <Grid item xs={12}>
-            <Paper>Show me Top results</Paper>
-          </Grid>
+
+        <div className="secondrow graphRow">
+          <Devices tableData={this.state.tableData} />
+          <LargeFileSharing tableData={this.state.tableData} />
         </div>
+
+
+
+
+            <PrimaryCapability tableData={this.state.tableData} />
+            <JobRoleBreakdown tableData={this.state.tableData} />
+          <div>
+            Show me top results
+        </div>
+
+
+
       </div>
+
     );
   }
 }

@@ -12,13 +12,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+/*
 .app{
   display:flex;
-}
+} */
+
 .sidebar-container{
+  width: 150px;
   min-height: 100vh;
-  background-color: #1d3668;
+  background-color: #1D3668;
   color:white;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  position: fixed;
 
 }
 
@@ -39,14 +46,5 @@ code {
 
  }
 
- .content-container{
-   padding: 25px;
-   font-family: 'Playfair Display', serif;
-   line-height: 1.5em;
-   }
 
-   #uploadbtn{
-     margin:10px;
-
-   }
-
+/* yellow: #d4af37*/

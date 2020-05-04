@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDom from 'react-dom';
 import Button from '@material-ui/core/Button';
 
+
 class TotalUsers extends Component {
 
   getUsers = () => {
@@ -9,12 +10,26 @@ class TotalUsers extends Component {
     const users = tableData.length
     return users
   }
-  render() {
-    return (
+
+  displayUsers = () => {
+    const users = this.getUsers()
+    console.log(users)
+    if (users.length < 1) return ''
+    const userDisplay = (
       <div>
-     
-        <h1>Total Surveyed:</h1>
-        <h1>{this.getUsers()}</h1>
+        <h3 className="chartTitle">Total Users Surveyed</h3>
+        <h1 className="userstotal">{this.getUsers()}</h1>
+      </div>
+    )
+    return userDisplay
+  }
+
+
+  render() {
+
+    return (
+      <div className='TotalUsers'>
+        {this.displayUsers()}
       </div>
     )
   }

@@ -18,13 +18,6 @@ import { positions } from '@material-ui/system';
 
 
 class App extends Component {
-  constructor() {
-    super()
-    this.state = {
-      tableData: []
-    }
-  }
-
   onFileUpload = (tableData) => {
     this.setState({
       tableData: tableData
@@ -35,20 +28,7 @@ class App extends Component {
     return (
       <div className="app">
         <Sidebar />
-        <FileUpload onFileUpload={this.onFileUpload} />
-
-        <Content tableData={this.state.tableData} />
-
-        {/* <WeeklyUse tableData={this.state.tableData} />
-        <TotalUsers tableData={this.state.tableData} />
-        <ProductivityAverage tableData={this.state.tableData} />
-        <TopDevice tableData={this.state.tableData} />
-        <JobRoleBreakdown tableData={this.state.tableData} />
-        <LargeFileSharing tableData={this.state.tableData} />
-        <Productivity tableData={this.state.tableData} />
-        <PrimaryCapability tableData={this.state.tableData} />
-        <Devices tableData={this.state.tableData} /> */}
-
+        <Content />
       </div>
     )
   }

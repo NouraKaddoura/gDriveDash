@@ -61,7 +61,7 @@ class LargeFileSharing extends Component {
       datasets: [
         {
           label: 'File Sharing',
-          fillColor: '#00008b',
+          fillColor: '#6290C8',
           data: [
             fileNames.filter(o => o === 'Message Courier').length,
             fileNames.filter(o => o === 'USB').length,
@@ -82,8 +82,8 @@ class LargeFileSharing extends Component {
 
   render() {
     return (
-      <div>
-        <div>Top Service: {this.getTopFileType()}</div>
+      <div className='LargeFileSharing'>
+        <div>{this.getTopFileType()}</div>
         {this.renderChart()}
       </div>
     )
