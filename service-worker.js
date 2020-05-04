@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/gDriveDash/precache-manifest.a69103cd20aab29bced3d873d71f9a91.js"
+  "/gDriveDash/precache-manifest.26faa638c2e0a44c58819fcc976bd9fd.js"
 );
 
 self.addEventListener('message', (event) => {

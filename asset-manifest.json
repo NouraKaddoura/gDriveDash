@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/gDriveDash/static/css/main.dd91cf25.chunk.css",
-    "main.js": "/gDriveDash/static/js/main.1279b80c.chunk.js",
-    "main.js.map": "/gDriveDash/static/js/main.1279b80c.chunk.js.map",
+    "main.css": "/gDriveDash/static/css/main.4d116ad0.chunk.css",
+    "main.js": "/gDriveDash/static/js/main.b7cab3cc.chunk.js",
+    "main.js.map": "/gDriveDash/static/js/main.b7cab3cc.chunk.js.map",
     "runtime-main.js": "/gDriveDash/static/js/runtime-main.0e8268d0.js",
     "runtime-main.js.map": "/gDriveDash/static/js/runtime-main.0e8268d0.js.map",
     "static/js/2.0498caf2.chunk.js": "/gDriveDash/static/js/2.0498caf2.chunk.js",
     "static/js/2.0498caf2.chunk.js.map": "/gDriveDash/static/js/2.0498caf2.chunk.js.map",
     "index.html": "/gDriveDash/index.html",
-    "precache-manifest.a69103cd20aab29bced3d873d71f9a91.js": "/gDriveDash/precache-manifest.a69103cd20aab29bced3d873d71f9a91.js",
+    "precache-manifest.26faa638c2e0a44c58819fcc976bd9fd.js": "/gDriveDash/precache-manifest.26faa638c2e0a44c58819fcc976bd9fd.js",
     "service-worker.js": "/gDriveDash/service-worker.js",
-    "static/css/main.dd91cf25.chunk.css.map": "/gDriveDash/static/css/main.dd91cf25.chunk.css.map",
+    "static/css/main.4d116ad0.chunk.css.map": "/gDriveDash/static/css/main.4d116ad0.chunk.css.map",
     "static/js/2.0498caf2.chunk.js.LICENSE.txt": "/gDriveDash/static/js/2.0498caf2.chunk.js.LICENSE.txt",
     "static/media/logo.svg": "/gDriveDash/static/media/logo.5d5d9eef.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.0e8268d0.js",
     "static/js/2.0498caf2.chunk.js",
-    "static/css/main.dd91cf25.chunk.css",
-    "static/js/main.1279b80c.chunk.js"
+    "static/css/main.4d116ad0.chunk.css",
+    "static/js/main.b7cab3cc.chunk.js"
   ]
 }
