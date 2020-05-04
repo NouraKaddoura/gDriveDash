@@ -52,16 +52,14 @@ class Content extends Component {
     return (
       <div className="content">
 
-          <div className='fileupload'>
-              <FileUpload onFileUpload={this.onFileUpload} tableData={this.state.tableData} />
-          </div>
+
 
 
         <div className="firstrow graphRow">
           <WeeklyUse tableData={this.state.tableData} />
           <div className="usabilityCollab">
            <TotalUsers tableData={this.state.tableData}/>
-            <h3 style={{paddingLeft:10}}>Productivity & Collaboration Rating Average</h3><ProductivityAverage tableData={this.state.tableData} />
+          <ProductivityAverage tableData={this.state.tableData} />
           </div>
         </div>
 
@@ -72,14 +70,17 @@ class Content extends Component {
 
 
 
+        <div className="thirdrow graphRow">
+          <PrimaryCapability tableData={this.state.tableData} />
+          <JobRoleBreakdown tableData={this.state.tableData} />
+        </div>
+        <div className="results">
 
-            <PrimaryCapability tableData={this.state.tableData} />
-            <JobRoleBreakdown tableData={this.state.tableData} />
-          <div>
-            Show me top results
         </div>
 
-
+        <div className='fileupload'>
+          <FileUpload onFileUpload={this.onFileUpload} tableData={this.state.tableData} />
+        </div>
 
       </div>
 

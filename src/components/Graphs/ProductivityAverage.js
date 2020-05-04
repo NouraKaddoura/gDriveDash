@@ -38,7 +38,7 @@ class ProductivityAverage extends Component {
   render() {
     return (
       <div class="rating">
-        <Rating initialRating={this.getProductivity()} readonly
+        <h3 style={{ paddingLeft: 10 }}>Productivity & Collaboration Rating Average</h3><Rating initialRating={this.getProductivity()} readonly
 
         />
       </div>

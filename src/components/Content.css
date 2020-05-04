@@ -51,6 +51,13 @@ justify-content: space-evenly;
   text-align:center;
 }
 
+.thirdrow{
+  display: flex;
+  justify-content: space-evenly;
+  text-align:center;
+
+}
+
 .WeeklyUse {
   display: inline-block;
 }
@@ -65,4 +72,9 @@ justify-content: space-evenly;
 
 .LargeFileSharing {
   display: inline-block;
+}
+
+
+.fileupload{
+  margin-top:80px;
 }
